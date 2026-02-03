@@ -161,6 +161,7 @@
     </section>
 
  <!-- Контакты -->
+<!-- Контакты -->
 <section class="section" id="contact">
   <div class="container">
     <h2 class="section__title">Контакты</h2>
@@ -168,35 +169,55 @@
       Напиши — коротко уточню задачу и предложу формат работы (разовый аудит / сопровождение / разработка).
     </p>
 
-    <form class="contact-form" action="https://formspree.io/f/mgozqzqw" method="POST">
-      <!-- Тема письма -->
-      <input type="hidden" name="_subject" value="Заявка с сайта securecraft.ru">
-      <!-- Куда редиректить после успешной отправки (замени домен на свой, если другой) -->
-      <input type="hidden" name="_next" value="https://www.securecraft.ru/#contact">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <form class="contact-form" action="https://formspree.io/f/mgozqzqw" method="POST">
+          <input type="hidden" name="_subject" value="Заявка с сайта securecraft.ru">
+          <input type="hidden" name="_next" value="https://www.securecraft.ru/#contact">
+          <input type="hidden" name="_replyto" value="">
+          <input type="text" name="_gotcha" style="display:none">
 
-      <div class="field">
-        <label class="label" for="name">Имя</label>
-        <input class="input" id="name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться">
+          <div class="form-row">
+            <div class="field">
+              <label class="label" for="name">Имя</label>
+              <input class="input" id="name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться">
+            </div>
+
+            <div class="field">
+              <label class="label" for="email">Ваш email</label>
+              <input class="input" id="email" type="email" name="email" autocomplete="email" required placeholder="Чтобы я мог ответить">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="message">Сообщение</label>
+            <textarea class="textarea" id="message" name="message" rows="6" required placeholder="Коротко опишите задачу"></textarea>
+          </div>
+
+          <div class="contact-actions">
+            <button class="btn btn--primary" type="submit">Отправить</button>
+            <p class="contact-note">Отвечаю обычно в течение дня.</p>
+          </div>
+        </form>
       </div>
 
-      <div class="field">
-        <label class="label" for="email">Ваш email</label>
-        <input class="input" id="email" type="email" name="email" autocomplete="email" required placeholder="Чтобы я мог ответить">
-      </div>
+      <aside class="contact-side">
+        <div class="contact-badge">
+          <h3 class="contact-badge__title">Быстрый канал</h3>
+          <p class="contact-badge__text">Если удобнее — напиши в Telegram. Там быстрее.</p>
+          <a class="btn btn--ghost" href="https://t.me/MarcelSec" target="_blank" rel="noreferrer">
+            Telegram: @MarcelSec
+          </a>
+        </div>
 
-      <!-- Reply-To: чтобы отвечать прямо кнопкой Reply -->
-      <input type="hidden" name="_replyto" value="">
-
-      <div class="field">
-        <label class="label" for="message">Сообщение</label>
-        <textarea class="textarea" id="message" name="message" rows="6" required placeholder="Коротко опишите задачу"></textarea>
-      </div>
-
-      <!-- антиспам: поле должно остаться пустым -->
-      <input type="text" name="_gotcha" style="display:none">
-
-      <button class="btn btn--primary" type="submit">Отправить</button>
-    </form>
+        <div class="contact-badge">
+          <h3 class="contact-badge__title">Что прислать в сообщении</h3>
+          <p class="contact-badge__text">
+            1) кратко задачу 2) сроки 3) что уже есть (сайт/инфра/доступы). Этого достаточно.
+          </p>
+        </div>
+      </aside>
+    </div>
 
     <script>
       // Проставляем _replyto тем же email, который ввёл человек
@@ -209,10 +230,6 @@
         email.addEventListener('input', () => { reply.value = email.value; });
       })();
     </script>
-
-    <ul class="contact" style="margin-top:16px">
-      <li><a class="link" href="https://t.me/MarcelSec" target="_blank" rel="noreferrer">Telegram: @MarcelSec</a></li>
-    </ul>
   </div>
 </section>
 </main>
