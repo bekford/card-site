@@ -65,58 +65,81 @@
       </div>
     </section>
 
-    <!-- Услуги -->
-    <section class="section" id="services">
-      <div class="container">
-        <h2 class="section__title">Услуги</h2>
+  <!-- Услуги -->
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section__title">Услуги</h2>
 
-        <div class="grid">
-          <!-- Услуга 1 -->
-          <article class="card">
-            <h3 class="card__title">Консультации по компьютерной безопасности</h3>
-            <p class="card__text">
-              Фокус на управлении рисками, инженерных контролях и понятных результатах
-              (отчёт, roadmap, рекомендации по приоритизации и quick wins).
-            </p>
+    <div class="grid">
+      <!-- Услуга 1 -->
+      <article class="card">
+        <h3 class="card__title">Кибербезопасность: аудит, AppSec, инфраструктура</h3>
+        <p class="card__text">
+          Делаю безопасность практично: нахожу реальные риски, приоритизирую, предлагаю меры, которые можно внедрить,
+          и довожу до результата. Без «страшилок» и без воды — отчёт, план работ и понятные шаги.
+        </p>
 
-            <ul class="list">
-              <li><strong>Аудит и диагностика:</strong> posture review, gap-analysis, hardening, анализ конфигураций, логирования, прав доступа.</li>
-              <li><strong>AppSec / Secure SDLC:</strong> threat modeling, security code review, SAST/DAST, управление секретами, безопасные релизы.</li>
-              <li><strong>Стандарты и практики:</strong> OWASP Top 10 / ASVS, NIST CSF/800-53 (по необходимости), базовые подходы ISO 27001.</li>
-              <li><strong>Инфра и сеть:</strong> IAM (least privilege), сегментация, TLS/PKI, WAF, базовые меры для cloud/on-prem.</li>
-              <li><strong>IR-готовность:</strong> рекомендации по мониторингу, алертингу, журналированию, runbooks, tabletop-сценарии.</li>
-            </ul>
+        <p class="card__text"><strong>Форматы работы:</strong></p>
+        <ul class="list">
+          <li><strong>Экспресс-диагностика (1–3 дня):</strong> обзор posture, топ-риски, quick wins, приоритеты.</li>
+          <li><strong>Глубокий аудит (1–3 недели):</strong> threat modeling, проверка контролей, целевая модель и roadmap.</li>
+          <li><strong>Сопровождение (retainer):</strong> контроль внедрения, улучшение процессов, поддержка команды.</li>
+        </ul>
 
-            <p class="card__text">
-              <strong>Тулчейн (без “магии”, по делу):</strong> Burp Suite / OWASP ZAP, Semgrep/SonarQube, GitHub Actions/GitLab CI,
-              Docker, базово Terraform, логирование/метрики (в зависимости от стека).
-            </p>
-          </article>
+        <p class="card__text"><strong>Что делаю:</strong></p>
+        <ul class="list">
+          <li><strong>Аудит и диагностика:</strong> gap-analysis, hardening, анализ конфигураций, IAM/права доступа, логирование и алерты.</li>
+          <li><strong>AppSec / Secure SDLC:</strong> threat modeling, security code review, SAST/DAST, секреты и supply chain, безопасные релизы.</li>
+          <li><strong>Инфраструктура и сеть:</strong> least privilege, сегментация, TLS/PKI, WAF, базовые меры для cloud/on-prem.</li>
+          <li><strong>IR-готовность:</strong> мониторинг/алертинг, журналирование, runbooks, tabletop-сценарии и отработка действий.</li>
+          <li><strong>Фреймворки:</strong> OWASP Top 10 / ASVS, NIST CSF/800-53 (когда нужно привязать меры к фреймворку), ISO 27001 (подходы и контрольные меры).</li>
+        </ul>
 
-          <!-- Услуга 2 -->
-          <article class="card">
-            <h3 class="card__title">Веб-разработка (визитки/лендинги) </h3>
-            <p class="card__text">
-              Делаю сайты, которые выглядят нормально и ведут себя нормально: адаптив, скорость, SEO-база, аналитика,
-              чистые интеграции и аккуратный деплой.
-            </p>
+        <p class="card__text"><strong>На выходе:</strong></p>
+        <ul class="list">
+          <li><strong>Risk register:</strong> риск → вероятность/ущерб → приоритет → мера → владелец → срок.</li>
+          <li><strong>Roadmap 30/60/90:</strong> quick wins + системные изменения.</li>
+          <li><strong>Чек-листы:</strong> hardening/IAM/логирование/релизы под твой стек.</li>
+        </ul>
 
-            <ul class="list">
-              <li><strong>Фронтенд:</strong> HTML/CSS, JS/TS, компонентный подход, доступность (a11y), Core Web Vitals.</li>
-              <li><strong>Бэкенд (если нужно):</strong> Node.js / Python (FastAPI), REST, формы/почта, простые интеграции.</li>
-              <li><strong>Данные:</strong> PostgreSQL (по задаче), базовые кеш-подходы (Redis при необходимости).</li>
-              <li><strong>Деплой:</strong> Nginx, Docker, CI/CD, домен/HTTPS, эксплуатационные мелочи (логи, бэкапы, env-секреты).</li>
-              <li><strong>Практика:</strong> код-ревью, понятные коммиты, чек-листы, документация “как поддерживать”.</li>
-            </ul>
+        <p class="card__text">
+          <strong>Инструменты:</strong> Burp Suite / OWASP ZAP, Semgrep/SonarQube, GitHub Actions/GitLab CI,
+          Docker, Terraform (модули, best practices, безопасный деплой), логирование/метрики — по стеку и задаче.
+        </p>
+      </article>
 
-            <p class="card__text">
-              Если нужен максимально простой вариант — делаю статический сайт без тяжёлых зависимостей.
-              Если нужна “чуть сложнее” — подключаю бэкенд/интеграции и нормальный пайплайн.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <!-- Услуга 2 -->
+      <article class="card">
+        <h3 class="card__title">Веб-разработка: визитки и лендинги с инженерным качеством</h3>
+        <p class="card__text">
+          Делаю сайты, которые быстро грузятся, нормально индексируются и не разваливаются в поддержке.
+          Сразу закладываю понятную структуру, аккуратный деплой и минимизацию рисков (в том числе для форм и интеграций).
+        </p>
+
+        <p class="card__text"><strong>Что входит:</strong></p>
+        <ul class="list">
+          <li><strong>Фронтенд:</strong> HTML/CSS, JS/TS, компонентный подход, адаптив, доступность (a11y), Core Web Vitals.</li>
+          <li><strong>SEO и аналитика:</strong> мета-теги, структура, sitemap/robots, базовая аналитика (по запросу).</li>
+          <li><strong>Интеграции:</strong> формы без публикации email, сервисы отправки, простые API-интеграции (если нужно).</li>
+          <li><strong>Бэкенд (по задаче):</strong> Node.js / Python (FastAPI), REST, простые сервисы и endpoints.</li>
+          <li><strong>Эксплуатация:</strong> домен/HTTPS, CI/CD, env-секреты, логи, бэкапы (если есть серверная часть).</li>
+        </ul>
+
+        <p class="card__text"><strong>Подход к качеству:</strong></p>
+        <ul class="list">
+          <li><strong>Предсказуемый деплой:</strong> сборка/публикация, откат, минимум ручных шагов.</li>
+          <li><strong>Поддерживаемость:</strong> понятная структура, комментарии по ключевым местам, короткая документация.</li>
+          <li><strong>Безопасность по умолчанию:</strong> секреты не в репозитории, формы через сервис/бэкенд, базовые security-заголовки по ситуации.</li>
+        </ul>
+
+        <p class="card__text">
+          Если нужен максимально лёгкий вариант — делаю статический сайт без тяжёлых зависимостей.
+          Если нужно “чуть сложнее” — подключаю бэкенд/интеграции и CI/CD.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
     <!-- Обо мне -->
     <section class="section" id="about">
