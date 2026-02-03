@@ -4,43 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Имя Фамилия — сайт-визитка</title>
-  <meta name="description" content="Коротко: кто вы и что делаете. 120–160 символов." />
+  <title>bekford — консультации по кибербезопасности и разработка сайтов</title>
+  <meta
+    name="description"
+    content="Консультации по компьютерной безопасности (middle–senior), secure SDLC, аудит и hardening. Разработка сайтов (middle–senior): лендинги/визитки, интеграции, деплой. Опыт 10+ лет."
+  />
 
   <!-- Open Graph превью (для Telegram/FB) -->
-  <meta property="og:title" content="Имя Фамилия — сайт-визитка" />
-  <meta property="og:description" content="Коротко: кто вы и что делаете." />
+  <meta property="og:title" content="bekford — кибербезопасность и веб-разработка" />
+  <meta
+    property="og:description"
+    content="Security-консультации (audit, threat modeling, OWASP/NIST) + разработка сайтов (frontend/backend, деплой). Опыт 10+ лет."
+  />
   <meta property="og:type" content="website" />
   <!-- Если будет картинка-превью: assets/og.jpg -->
   <!-- <meta property="og:image" content="assets/og.jpg" /> -->
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style.css" />
-<script src="js/main.js"></script>
 </head>
+
 <body>
 
   <!-- Шапка -->
   <header class="header">
     <div class="container header__inner">
-      <a class="logo" href="#top" aria-label="На главную">Имя</a>
+      <a class="logo" href="#top" aria-label="На главную">bekford</a>
 
-     <div class="navwrap" id="navwrap">
-  <nav class="nav" id="nav" aria-label="Основная навигация">
-    <a class="nav__link" href="#services">Услуги</a>
-    <a class="nav__link" href="#work">Кейсы</a>
-    <a class="nav__link" href="#about">Обо мне</a>
-    <a class="nav__link" href="#contact">Контакты</a>
-  </nav>
-</div>
+      <div class="navwrap" id="navwrap">
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+          <a class="nav__link" href="#services">Услуги</a>
+          <a class="nav__link" href="#about">Обо мне</a>
+          <a class="nav__link" href="#contact">Контакты</a>
+        </nav>
+      </div>
 
-      <!-- Кнопка для мобильного меню (пока без логики) -->
       <button class="burger" id="burger" type="button"
         aria-label="Открыть меню"
         aria-expanded="false"
         aria-controls="nav">
-  ☰
-</button>
+        ☰
+      </button>
     </div>
   </header>
 
@@ -49,14 +52,15 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero__inner">
-        <h1 class="hero__title">Я делаю X, чтобы у вас было Y</h1>
+        <h1 class="hero__title">Кибербезопасность и сайты — уровень middle–senior</h1>
         <p class="hero__text">
-          1–2 предложения: кому вы помогаете, что делаете, чем отличаетесь.
+          Помогаю закрывать риски в инфраструктуре и продукте: аудит, threat modeling, secure SDLC, hardening и контрольные меры.
+          Параллельно делаю сайты/лендинги с нормальной инженерией: производительность, SEO, доступность, деплой и сопровождение.
         </p>
 
         <div class="hero__actions">
           <a class="btn btn--primary" href="#contact">Написать</a>
-          <a class="btn btn--ghost" href="#work">Посмотреть кейсы</a>
+          <a class="btn btn--ghost" href="#services">Посмотреть услуги</a>
         </div>
       </div>
     </section>
@@ -67,46 +71,48 @@
         <h2 class="section__title">Услуги</h2>
 
         <div class="grid">
+          <!-- Услуга 1 -->
           <article class="card">
-            <h3 class="card__title">Услуга 1</h3>
-            <p class="card__text">Короткое описание в 1–2 строки.</p>
+            <h3 class="card__title">Консультации по компьютерной безопасности</h3>
+            <p class="card__text">
+              Услуги уровня middle–senior: фокус на управлении рисками, инженерных контролях и понятных результатах
+              (отчёт, roadmap, рекомендации по приоритизации и quick wins).
+            </p>
+
+            <ul class="list">
+              <li><strong>Аудит и диагностика:</strong> posture review, gap-analysis, hardening, анализ конфигураций, логирования, прав доступа.</li>
+              <li><strong>AppSec / Secure SDLC:</strong> threat modeling, security code review, SAST/DAST, управление секретами, безопасные релизы.</li>
+              <li><strong>Стандарты и практики:</strong> OWASP Top 10 / ASVS, NIST CSF/800-53 (по необходимости), базовые подходы ISO 27001.</li>
+              <li><strong>Инфра и сеть:</strong> IAM (least privilege), сегментация, TLS/PKI, WAF, базовые меры для cloud/on-prem.</li>
+              <li><strong>IR-готовность:</strong> рекомендации по мониторингу, алертингу, журналированию, runbooks, tabletop-сценарии.</li>
+            </ul>
+
+            <p class="card__text">
+              <strong>Тулчейн (без “магии”, по делу):</strong> Burp Suite / OWASP ZAP, Semgrep/SonarQube, GitHub Actions/GitLab CI,
+              Docker, базово Terraform, логирование/метрики (в зависимости от стека).
+            </p>
           </article>
 
+          <!-- Услуга 2 -->
           <article class="card">
-            <h3 class="card__title">Услуга 2</h3>
-            <p class="card__text">Короткое описание в 1–2 строки.</p>
-          </article>
+            <h3 class="card__title">Разработка сайтов (визитки/лендинги) — middle–senior</h3>
+            <p class="card__text">
+              Делаю сайты, которые выглядят нормально и ведут себя нормально: адаптив, скорость, SEO-база, аналитика,
+              чистые интеграции и аккуратный деплой.
+            </p>
 
-          <article class="card">
-            <h3 class="card__title">Услуга 3</h3>
-            <p class="card__text">Короткое описание в 1–2 строки.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+            <ul class="list">
+              <li><strong>Фронтенд:</strong> HTML/CSS, JS/TS, компонентный подход, доступность (a11y), Core Web Vitals.</li>
+              <li><strong>Бэкенд (если нужно):</strong> Node.js / Python (FastAPI), REST, формы/почта, простые интеграции.</li>
+              <li><strong>Данные:</strong> PostgreSQL (по задаче), базовые кеш-подходы (Redis при необходимости).</li>
+              <li><strong>Деплой:</strong> Nginx, Docker, CI/CD, домен/HTTPS, эксплуатационные мелочи (логи, бэкапы, env-секреты).</li>
+              <li><strong>Практика:</strong> код-ревью, понятные коммиты, чек-листы, документация “как поддерживать”.</li>
+            </ul>
 
-    <!-- Кейсы -->
-    <section class="section" id="work">
-      <div class="container">
-        <h2 class="section__title">Кейсы</h2>
-
-        <div class="grid">
-          <article class="card">
-            <h3 class="card__title">Проект A</h3>
-            <p class="card__text">Что сделали + измеримый результат (если есть).</p>
-            <a class="link" href="#" target="_blank" rel="noreferrer">Открыть</a>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Проект B</h3>
-            <p class="card__text">Что сделали + измеримый результат (если есть).</p>
-            <a class="link" href="#" target="_blank" rel="noreferrer">Открыть</a>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title">Проект C</h3>
-            <p class="card__text">Что сделали + измеримый результат (если есть).</p>
-            <a class="link" href="#" target="_blank" rel="noreferrer">Открыть</a>
+            <p class="card__text">
+              Если нужен максимально простой вариант — делаю статический сайт без тяжёлых зависимостей.
+              Если нужна “чуть сложнее” — подключаю бэкенд/интеграции и нормальный пайплайн.
+            </p>
           </article>
         </div>
       </div>
@@ -118,13 +124,15 @@
         <h2 class="section__title">Обо мне</h2>
 
         <p class="text">
-          4–6 строк: опыт, специализация, принципы работы, ваш стек/сильные стороны.
+          Опыт в IT <strong>10+ лет</strong>. Работаю на стыке инженерии и безопасности: умею разложить задачу по рискам,
+          собрать адекватные меры, объяснить “почему так”, и довести до внедрения.
+          В веб-разработке придерживаюсь практик, которые не стыдно поддерживать: качество, производительность, предсказуемый деплой.
         </p>
 
         <ul class="list">
-          <li>Факт/достижение 1</li>
-          <li>Факт/достижение 2</li>
-          <li>Факт/достижение 3</li>
+          <li><strong>Инженерный уровень:</strong> архитектурные решения, приоритизация, trade-offs, документация, сопровождение.</li>
+          <li><strong>Security-мышление:</strong> модели угроз, контроль поверхности атаки, принципы least privilege и defense-in-depth.</li>
+          <li><strong>Процесс:</strong> чек-листы, PR/ревью, CI/CD, базовая автоматизация, прозрачные договорённости по результату.</li>
         </ul>
       </div>
     </section>
@@ -133,12 +141,12 @@
     <section class="section" id="contact">
       <div class="container">
         <h2 class="section__title">Контакты</h2>
-        <p class="text">Выберите удобный способ связи:</p>
+        <p class="text">Напиши — коротко уточню задачу и предложу формат работы (разовый аудит / сопровождение / разработка).</p>
 
         <ul class="contact">
           <li><a class="link" href="mailto:you@example.com">you@example.com</a></li>
           <li><a class="link" href="#" target="_blank" rel="noreferrer">Telegram</a></li>
-          <li><a class="link" href="#" target="_blank" rel="noreferrer">GitHub / Behance</a></li>
+          <li><a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a></li>
         </ul>
       </div>
     </section>
@@ -147,10 +155,11 @@
   <!-- Подвал -->
   <footer class="footer">
     <div class="container footer__inner">
-      <small>© <span id="year"></span> Имя. Все права защищены.</small>
+      <small>© <span id="year"></span> bekford.</small>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Скрипт один раз, корректно -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
