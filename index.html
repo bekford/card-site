@@ -137,7 +137,7 @@
       </div>
     </section>
 
-   <!-- Контакты -->
+ <!-- Контакты -->
 <section class="section" id="contact">
   <div class="container">
     <h2 class="section__title">Контакты</h2>
@@ -146,6 +146,11 @@
     </p>
 
     <form class="contact-form" action="https://formspree.io/f/mgozqzqw" method="POST">
+      <!-- Тема письма -->
+      <input type="hidden" name="_subject" value="Заявка с сайта securecraft.ru">
+      <!-- Куда редиректить после успешной отправки (замени домен на свой, если другой) -->
+      <input type="hidden" name="_next" value="https://www.securecraft.ru/#contact">
+
       <div class="field">
         <label class="label" for="name">Имя</label>
         <input class="input" id="name" type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться">
@@ -155,6 +160,9 @@
         <label class="label" for="email">Ваш email</label>
         <input class="input" id="email" type="email" name="email" autocomplete="email" required placeholder="Чтобы я мог ответить">
       </div>
+
+      <!-- Reply-To: чтобы отвечать прямо кнопкой Reply -->
+      <input type="hidden" name="_replyto" value="">
 
       <div class="field">
         <label class="label" for="message">Сообщение</label>
@@ -167,13 +175,25 @@
       <button class="btn btn--primary" type="submit">Отправить</button>
     </form>
 
+    <script>
+      // Проставляем _replyto тем же email, который ввёл человек
+      (function () {
+        const form = document.querySelector('#contact .contact-form');
+        if (!form) return;
+        const email = form.querySelector('input[name="email"]');
+        const reply = form.querySelector('input[name="_replyto"]');
+        if (!email || !reply) return;
+        email.addEventListener('input', () => { reply.value = email.value; });
+      })();
+    </script>
+
     <ul class="contact" style="margin-top:16px">
       <li><a class="link" href="https://t.me/Marq" target="_blank" rel="noreferrer">Telegram: @Marq</a></li>
       <li><a class="link" href="https://github.com/bekford" target="_blank" rel="noreferrer">GitHub</a></li>
     </ul>
   </div>
 </section>
-  </main>
+</main>
 
   <!-- Подвал -->
   <footer class="footer">
