@@ -1,0 +1,313 @@
+/* ===== 1) База / переменные ===== */
+:root {
+  /* Цвета */
+  --bg: #0b0f17;
+  --surface: #111827;
+  --surface-2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.10);
+  --accent: #7c3aed;
+
+  /* Типографика */
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --fs-base: 16px;
+  --lh: 1.6;
+
+  /* Сетка / размеры */
+  --container: 1100px;
+  --pad: 20px;
+  --radius: 14px;
+
+  /* Тени */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Отступы */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 72px;
+}
+
+/* Минимальный reset */
+* { box-sizing: border-box; }
+html { font-size: var(--fs-base); scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  line-height: var(--lh);
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(124, 58, 237, 0.20), transparent 55%),
+              radial-gradient(900px 500px at 90% 30%, rgba(59, 130, 246, 0.10), transparent 50%),
+              var(--bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus, button:focus { outline: 2px solid rgba(124, 58, 237, 0.75); outline-offset: 2px; }
+
+.container {
+  width: min(var(--container), 100% - (var(--pad) * 2));
+  margin-inline: auto;
+}
+
+/* ===== 2) Общие элементы ===== */
+.section {
+  padding: var(--space-7) 0;
+}
+
+.section__title {
+  margin: 0 0 var(--space-4);
+  font-size: 1.6rem;
+  letter-spacing: 0.2px;
+}
+
+.text {
+  margin: 0 0 var(--space-4);
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text);
+  opacity: 0.9;
+  border-bottom: 1px dashed rgba(255,255,255,0.25);
+}
+.link:hover { opacity: 1; border-bottom-color: rgba(124,58,237,0.8); }
+
+/* ===== 3) Кнопки ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); border-color: rgba(124,58,237,0.55); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: linear-gradient(180deg, rgba(124,58,237,0.95), rgba(124,58,237,0.70));
+  border-color: rgba(124,58,237,0.45);
+}
+.btn--primary:hover { border-color: rgba(255,255,255,0.25); }
+
+.btn--ghost {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ===== 4) Карточки и сетка ===== */
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.card__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.05rem;
+}
+
+.card__text {
+  margin: 0 0 var(--space-3);
+  color: var(--muted);
+}
+
+/* ===== 5) Header / навигация ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 15, 23, 0.65);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: var(--space-3);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav__link {
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.nav__link:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.burger {
+  display: none;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+/* ===== 6) Hero ===== */
+.hero {
+  padding: var(--space-7) 0 var(--space-6);
+}
+
+.hero__inner {
+  padding: var(--space-6);
+  border-radius: calc(var(--radius) + 6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(800px 300px at 20% 20%, rgba(124,58,237,0.20), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow: var(--shadow);
+}
+
+.hero__title {
+  margin: 0 0 var(--space-3);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+  max-width: 26ch;
+}
+
+.hero__text {
+  margin: 0 0 var(--space-4);
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ===== 7) Контакты / футер ===== */
+.contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.15);
+}
+
+.footer__inner {
+  padding: 18px 0;
+  color: var(--muted);
+}
+
+/* ===== 8) Адаптив ===== */
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero__inner { padding: var(--space-5); }
+  .hero__title { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav { display: none; }
+  .burger { display: inline-flex; align-items: center; justify-content: center; }
+
+  .section { padding: var(--space-6) 0; }
+  .hero__inner { padding: var(--space-4); }
+  .hero__title { font-size: 1.7rem; }
+}
+/* ===== Мобильное меню (управляется классом .navwrap--open) ===== */
+.navwrap {
+  display: contents; /* на десктопе обёртка не влияет на layout */
+}
+
+@media (max-width: 640px) {
+  .navwrap {
+    display: none; /* закрыто по умолчанию */
+  }
+
+  .navwrap--open {
+    display: block;
+    position: fixed;
+    inset: 56px 0 auto 0; /* ниже хедера */
+    padding: 10px var(--pad);
+    z-index: 60;
+  }
+
+  .navwrap--open .nav {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(11, 15, 23, 0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+
+  .navwrap--open .nav__link {
+    justify-content: flex-start;
+  }
+
+  /* затемнение фона кликом вне меню */
+  .navwrap--open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: -1;
+  }
+}
